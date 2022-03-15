@@ -103,110 +103,241 @@ $intelligence = 30;
 $apparence = 30;
 $endurance = 50;
 $mentality = 30;
-/*
+
 // BONUS & MALUS de FORCE
-if ($sexe = $sexe_array[0]){
-  $force = $force + 2;
-} else {
-  $force = $force - 2;
+switch($answer_sexe) {
+  case "0":
+  case "homme":
+    $force = $force + 2;
+    break;
+  case "1":
+  case "femme":
+    $force = $force - 2;
+    break;
+  default:
+    $sexe = "nok";
 }
-if ($classe = $classes_array[4]){
-  $force = $force + 2;
+switch($answer_race){
+  case "1":
+  case "nain":
+  case "3":
+  case "barbare":
+      $force = $force + 1;
+      break;
+  case "4":
+  case "orc":
+    $force = $force + 3;
+    break;
 }
-if ($race = $races_array[1] || $races_array[3]){
-  $force = $force + 1;
-}
-if ($classe = $classes_array[3]){
-  $force = $force + 1;
-}
-if ($race = $races_array[4]){
-  $force = $force + 3;
+switch($answer_classe){
+  case "4":
+  case "berserker":
+    $force = $force + 2;
+    break;
+  case "3":
+  case "paladin":
+    $force = $force +1;
+    break;
 }
 
+
 // BONUS & MALUS d'AGILITE
-if ($race = $races_array[5]){
-  $agility = $agility + 1;
+switch($answer_race){
+  case "5":
+  case "semi-homme":
+    $agility = $agility + 1;
+    break;
+  case "0":
+  case "elfe":
+    $agility = $agility + 2;
+    break;
 }
-if ($classe = $classes_array[5]){
-  $agility = $agility + 1;
-}
-if ($race = $races_array[0]){
-  $agility = $agility + 2;
-}
-if ($classe = $classes_array[2]){
-  $agility = $agility + 2;
+switch($answer_classe){
+  case "5":
+  case "voleur":
+    $agility = $agility + 1;
+    break;
+  case "2":
+  case "archer":
+    $agility = $agility + 2;
+    break;
 }
 
 // BONUS & MALUS d'INTELLIGENCE
-if ($race = $races_array[3]){
-  $intelligence = $intelligence - 1;
+switch($answer_race){
+  case "3":
+  case "barbare":
+    $intelligence = $intelligence - 1;
+    break;
+  case "2":
+  case "humain":
+    $intelligence = $intelligence + 1;
+    break;
 }
-if ($race = $races_array[2]){
-  $intelligence = $intelligence + 1;
-}
-if ($classe = $classes_array[0]){
-  $intelligence = $intelligence + 1;
-}
-if ($classe = $classes_array[1]){
-  $intelligence = $intelligence + 2;
+switch($answer_classe){
+  case "0":
+  case "barde":
+    $intelligence = $intelligence + 1;
+    break;
+  case "1":
+  case "mage":
+    $intelligence = $intelligence + 2;
+    break;
 }
 
 // BONUS & MALUS d'APPARENCE
-if ($sexe = $sexe_array[0]){
-  $apparence = $apparence - 2;
-} else {
-  $apparence = $apparence + 2;
+switch($answer_sexe){
+  case "0":
+  case "homme":
+    $apparence = $apparence - 2;
+    break;
+  case "1":
+  case "femme":
+    $apparence = $apparence +2;
+    break;
 }
-if ($race = $races_array[1]){
-  $apparence = $apparence - 1;
+switch($answer_race){
+  case "1":
+  case "nain":
+    $apparence = $apparence - 1;
+    break;
+  case "0":
+  case "elfe":
+  case "2":
+  case "humain":
+    $apparence = $apparence + 1;
+    break;
 }
-if ($race = $races_array[0] || $races_array[2]){
-  $apparence = $apparence + 1;
-}
-if ($classe = $classes_array[0]){
-  $apparence = $apparence + 1;
+switch($answer_classe){
+  case "0":
+  case "barde":
+    $apparence = $apparence + 1;
+    break;
 }
 
 // BONUS & MALUS d'ENDURANCE
-if ($race = $races_array[1] || $races_array[3]){
-  $endurance = $endurance + 1;
+switch($answer_race){
+  case "5":
+  case "semi-homme":
+    $endurance = $endurance +2;
+    break;
+  case "1":
+  case "nain":
+  case "3":
+  case "barbare":
+    $endurance = $endurance + 1;
+    break;
 }
-if ($classe = $classes_array[5]){
-  $endurance = $endurance + 1;
-}
-if ($race = $races_array[5]){
-  $endurance = $endurance + 2;
+switch($answer_classe){
+  case "5":
+  case "voleur":
+    $endurance = $endurance + 1;
 }
 
 // BONUS & MALUS de MENTALITE
-if ($race = $races_array[2]){
-  $mentality = $mentality - 1;
+switch($answer_race){
+  case "2":
+  case "humain":
+    $mentality = $mentality - 1;
+    break;
 }
-if ($classe = $classes_array[3]){
-  $mentality = $mentality + 1;
+switch($answer_classe){
+  case "3":
+  case "paladin":
+    $mentality = $mentality + 1;
+    break;
 }
-*/
+
 echo "Combien voulez-vous ajouter...\n";
 echo "En FORCE ?\n";
 	$answer_force = readline(">> ");
-	$force = $force + $answer_force;
+	$force_power = $force + $answer_force;
 echo "En AGILITE ?\n";
 	$answer_agility = readline(">> ");
-	$agility = $agility + $answer_agility;
+	$agility_power = $agility + $answer_agility;
 echo "En INTELLIGENCE ?\n";
 	$answer_intelligence = readline(">> ");
-	$intelligence = $intelligence + $answer_intelligence;
+	$intelligence_power = $intelligence + $answer_intelligence;
 echo "En APPARENCE ?\n";
 	$answer_apparence = readline(">> ");
-	$apparence = $apparence + $answer_apparence;
+	$apparence_power = $apparence + $answer_apparence;
 echo "En ENDURANCE ?\n";
 	$answer_endurance = readline(">> ");
-	$endurance = $endurance + $answer_endurance;
+	$endurance_power = $endurance + $answer_endurance;
 echo "En MENTALITE ?\n";
 	$answer_mentality = readline(">> ");
-	$mentality = $mentality + $answer_mentality;
+	$mentality_power = $mentality + $answer_mentality;
 echo "\n";
 
+//Compétences de Races
+$elfe = "Faune & Flore +2 / Vue Perçante et Ouïe fine +2";
+$nain = "Marchandage +2 / Forge +2";
+$humain = "Séduction +2 / Cuisine +2";
+$barbare = "Faire du Feu +2 / Construire un Campement +2";
+$orc = "Chasse (gros gibier) +2 / Dépeçage +2";
+$s_h = "Chasse & Pêche +2";
+
+switch($answer_race){
+  case "0":
+  case "elfe":
+	  $c_r = $elfe;
+    break;
+  case "1":
+  case "nain":
+  	$c_r = $nain;
+    break;
+  case "2":
+  case "humain":
+  	$c_r = $humain;
+    break;
+  case "3":
+  case "barbare":
+  	$c_r = $barbare;
+    break;
+  case "4":
+  case "orc":
+  	$c_r = $orc;
+    break;
+  case "5":
+  case "semi-homme":
+  	$c_r = $s_h;
+    break;
+}
+
+//Compétences de Classes
+$barde = "Gain d'Or dans les Villes";
+$mage = "Lumière (éclaire dist-20m)";
+$archer = "Discrétion +2";
+$paladin = "Soins";
+$berserker = "Ini +3 / Rage";
+$voleur = "Détection & Désamorçage des pièges +2";
+
+switch($answer_classe){
+  case "0":
+  case "barde":
+	  $c_c = $barde;
+    break;
+  case "1":
+  case "mage":
+	  $c_c = $mage;
+    break;
+  case "2":
+  case "archer":
+	  $c_c = $archer;
+    break;
+  case "3":
+  case "paladin":	
+	  $c_c = $paladin;
+    break;
+  case "4":
+  case "berserker":
+	  $c_c = $berserker;
+    break;
+  case "5":
+  case "voleur":	
+	  $c_c = $voleur;
+    break;
+}
 
 echo "\n";
 echo "NOM = $name";
@@ -217,16 +348,23 @@ echo "RACE = $race";
 echo "\n";
 echo "CLASSE = $classe";
 echo "\n";
-
-echo "FORCE = $force";
 echo "\n";
-echo "AGILITE = $agility";
+echo "Compétence :";
 echo "\n";
-echo "INTELLIGENCE = $intelligence";
+echo $c_r;
 echo "\n";
-echo "APPARENCE = $apparence";
+echo $c_c;
 echo "\n";
-echo "ENDURANCE = $endurance";
 echo "\n";
-echo "MENTALITE = $mentality";
+echo "FORCE = $force_power";
+echo "\n";
+echo "AGILITE = $agility_power";
+echo "\n";
+echo "INTELLIGENCE = $intelligence_power";
+echo "\n";
+echo "APPARENCE = $apparence_power";
+echo "\n";
+echo "ENDURANCE = $endurance_power";
+echo "\n";
+echo "MENTALITE = $mentality_power";
 echo "\n";
